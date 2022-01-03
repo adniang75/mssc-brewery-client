@@ -1,0 +1,1 @@
+package com.alassaneniang.msscbreweryclient.web.client;
