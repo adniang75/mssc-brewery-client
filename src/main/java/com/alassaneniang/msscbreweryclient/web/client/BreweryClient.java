@@ -21,6 +21,7 @@ public class BreweryClient {
         this.restTemplate = restTemplateBuilder.build();
     }
 
+    // get beer by id
     public BeerDTO getBeerById ( UUID beerId ) {
         return restTemplate.getForObject( apihost + BEER_PATH_V1 + beerId.toString(), BeerDTO.class );
     }
@@ -31,6 +32,10 @@ public class BreweryClient {
 
     public void updateBeer ( UUID id, BeerDTO beerDTO ) {
         restTemplate.put( apihost + BEER_PATH_V1 + id.toString(), beerDTO );
+    }
+
+    public void deleteBeer ( UUID id ) {
+        restTemplate.delete( apihost + BEER_PATH_V1 + id.toString() );
     }
 
     public void setApihost ( String apihost ) {
