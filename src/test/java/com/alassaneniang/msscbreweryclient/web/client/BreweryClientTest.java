@@ -35,4 +35,13 @@ class BreweryClientTest {
         log.info(
                 "New Beer URI: " + uri.toString() );
     }
+
+    @Test
+    void testUpdateBeer () {
+        // given
+        BeerDTO beerDTO = BeerDTO.builder()
+                .beerName( "New Beer" )
+                .build();
+        client.updateBeer( UUID.randomUUID(), beerDTO );
+    }
 }
